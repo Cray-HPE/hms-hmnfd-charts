@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "cray-hms-hmnfd"
-version: 2.0.1
+version: 2.0.2
 description: "Kubernetes resources for cray-hms-hmnfd"
 home: "https://github.com/Cray-HPE/hms-hmnfd-charts"
 sources:
