@@ -19,6 +19,20 @@ cray-service:
   nameOverride: "cray-hmnfd"
   fullnameOverride: "cray-hmnfd"
   replicaCount: 3
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - topologyKey: kubernetes.io/hostname
+        labelSelector:
+          matchExpressions:
+            - key: app.kubernetes.io/name
+              operator: In
+              values:
+              - cray-hmnfd
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 50%
+    type: RollingUpdate
   etcdCluster:
     enabled: true
     resources:
