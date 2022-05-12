@@ -6,7 +6,7 @@ metadata:
   annotations:
     "helm.sh/hook": test
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
-    "helm.sh/hook-weight": "-1" #run this first!
+    "helm.sh/hook-weight": "-1"
 
   labels:
     app.kubernetes.io/name: "{{ .Release.Name }}-test-smoke"
