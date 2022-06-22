@@ -8,10 +8,8 @@
 #   pullPolicy: "" (default = "IfNotPresent")
 
 global:
-  #appVersion: 1.15.0
-  appVersion: 1.15.0-20220616171832.6fe8b20
-  #testVersion: 1.15.0
-  testVersion: 1.15.0-20220616171838.6fe8b20
+  appVersion: 1.16.0
+  testVersion: 1.16.0
 
 image:
   repository: artifactory.algol60.net/csm-docker/stable/cray-hmnfd
@@ -20,7 +18,7 @@ image:
 tests:
   image:
     repository: artifactory.algol60.net/csm-docker/stable/cray-hmnfd-test
-    pullPolicy: Always
+    pullPolicy: IfNotPresent
 
 cray-service:
   type: "Deployment"
