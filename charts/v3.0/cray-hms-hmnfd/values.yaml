@@ -26,6 +26,12 @@ cray-etcd-base:
     enabled: true
     fullnameOverride: "cray-hmnfd-bitnami-etcd"
     nameOverride: "cray-hmnfd-bitnami-tcd"
+    disasterRecovery:
+      cronjob:
+        snapshotsDir: "/snapshots/cray-hmnfd-bitnami-etcd"
+        schedule: "0 */1 * * *"
+        historyLimit: 1
+        snapshotHistoryLimit: 24
     extraEnvVars:
       - name: ETCD_HEARTBEAT_INTERVAL
         value: "4200"
@@ -39,6 +45,8 @@ cray-etcd-base:
         value: "10000"
       - name: ETCD_SNAPSHOT_HISTORY_LIMIT
         value: "24"
+      - name: ETCD_DISABLE_PRESTOP
+        value: "yes"
     extraVolumes:
     - configMap:
         defaultMode: 420
