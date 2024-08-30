@@ -8,7 +8,7 @@ chartVersionToCSMVersion:
   #   Chart Version: 4.0.0 <= x.y.z,         CSM Version: 1.6.0 <= x.y.z
   #
   # Chart version: CSM version
-  ">=2.0.0": "~1.2.0" # Chart Version: 2.0.0 <= x.y.z, CSM Version: 1.2.0 <= x.y.z < 1.3.0
+  ">=2.0.0": "~1.2.0"
   ">=2.1.0": "~1.3.0"
   ">=3.0.0": "~1.5.0"
   ">=4.0.0": "~1.6.0"
