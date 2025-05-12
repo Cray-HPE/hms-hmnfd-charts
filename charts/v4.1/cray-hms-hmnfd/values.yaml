@@ -35,6 +35,15 @@ cray-etcd-base:
         snapshotHistoryLimit: 24
         containerSecurityContext:
           seccompProfile: null
+    containerSecurityContext:
+      seccompProfile: null
+    preUpgradeJob:
+      containerSecurityContext:
+        seccompProfile: null
+    defrag:
+      cronjob:
+        containerSecurityContext:
+          seccompProfile: null
     extraEnvVars:
       - name: ETCD_HEARTBEAT_INTERVAL
         value: "4200"
@@ -62,15 +71,6 @@ cray-etcd-base:
       requests:
         cpu: 10m
         memory: 64Mi
-    containerSecurityContext:
-      seccompProfile: null
-    preUpgradeJob:
-      containerSecurityContext:
-        seccompProfile: null
-    defrag:
-      cronjob:
-        containerSecurityContext:
-          seccompProfile: null
 
 cray-service:
   type: "Deployment"
