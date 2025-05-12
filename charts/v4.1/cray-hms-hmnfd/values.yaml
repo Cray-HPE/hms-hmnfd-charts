@@ -33,6 +33,8 @@ cray-etcd-base:
         schedule: "0 */1 * * *"
         historyLimit: 1
         snapshotHistoryLimit: 24
+        containerSecurityContext:
+          seccompProfile: null
     extraEnvVars:
       - name: ETCD_HEARTBEAT_INTERVAL
         value: "4200"
@@ -62,10 +64,6 @@ cray-etcd-base:
         memory: 64Mi
     containerSecurityContext:
       seccompProfile: null
-    disasterRecovery:
-      cronjob:
-        containerSecurityContext:
-          seccompProfile: null
     preUpgradeJob:
       containerSecurityContext:
         seccompProfile: null
