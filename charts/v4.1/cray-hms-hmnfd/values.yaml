@@ -60,6 +60,19 @@ cray-etcd-base:
       requests:
         cpu: 10m
         memory: 64Mi
+    containerSecurityContext:
+      seccompProfile: null
+    disasterRecovery:
+      cronjob:
+        containerSecurityContext:
+          seccompProfile: null
+    preUpgradeJob:
+      containerSecurityContext:
+        seccompProfile: null
+    defrag:
+      cronjob:
+        containerSecurityContext:
+          seccompProfile: null
 
 cray-service:
   type: "Deployment"
